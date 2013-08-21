@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>每天进步一点儿</title>
+<style type="text/css">
+    body {
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+	#map{
+		width:600px;
+		height:400px;
+		background-color:#ffff00;
+	}
+	.sprite{
+		float:left;
+		width:10px;
+		height:10px;
+		border:2px solid #ffffff;
+		border-radius:2px;
+		display:inline;
+	}
+	.
+</style>
+<script type="text/javascript"  scr="data.js"></script>
+<script>
+var CSSClass = {}; //创建命名空间 http://www.ukseo.cn
+CSSClass.has = function(e, c) //判断给定的元素是否含有该类,有返回true
+{
+    if (typeof e == "string") e = document.getElementById(e); // 如果传入的的是字符串则则把它当作元素id
+    var classes = e.className;
+    if (!classes) return false;
+    if (classes == c) return true; // 只有一个class
+    return e.className.search("\\b" + c + "\\b") != -1;
+};
+CSSClass.add = function(e, c)
+{
+    if (typeof e == "string") e = document.getElementById(e);
+    if (CSSClass.has(e, c)) return; // 如果已经存在该类直接返回 
+    if (e.className) c = " " + c;
+    e.className += c;            
+};
+CSSClass.remove = function(e, c)
+{
+    if (typeof e == "string") e = document.getElementById(e); // element id
+    // Search the className for all occurrences of c and replace with "".
+    // \s* matches any number of whitespace characters.
+    // "g" makes the regular expression match any number of occurrences
+    e.className = e.className.replace(new RegExp("\\b"+ c+"\\b\\s*", "g"), "");
+};
+</script>
+</head>
+<body>
+<h1>坚持才能完成自己的梦想</h1>
+<hr/>
+</body>
+</html>
